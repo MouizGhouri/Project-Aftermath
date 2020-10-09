@@ -169,3 +169,35 @@ new bool: switch_on = true; // Correct
 ```
 
 Using correct tags is important to avoid any bugs or errors during program execution. 
+
+Pawn being a typeless language allows us to store different types of data in the same variable which can be useful in some cases and troublesome in others, but such usage of variables is not recommended.
+
+```c
+#include <a_samp>
+
+public OnFilterScriptInit ()
+{
+
+	new var ;
+	
+	var = 'a';
+	printf ("%c", var);
+	
+	var = 1;
+	printf ("%d", var);
+	
+	var = 1.0;
+	printf ("%f", var);
+	
+	var = true;
+	printf ("%d", var); // prints a value 0 or 1
+
+	return 1;
+}
+
+// Output :
+a
+1
+1.000000
+1
+```
