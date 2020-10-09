@@ -1,8 +1,17 @@
+---
+id: variables
+title: "Variables"
+---
+
 # Variables
 
   One of the most important concepts in programming is the concept of ‘variables’. In programming, a variable is an entity that is changeable, but in terms of what ? In Pawn language a variable holds a ‘value’ at any time and that value-as the name suggests-is ‘variable’ or ‘changeable’.
 
   The reason why variables are so important is because they are basically small units of computer memory which can hold or ‘remember’ different values while the program is under execution (running), and that property turns out to be very useful in programming. For example, you want to keep track of the scores of 100 players in a game, you can do it easily by programming the computer to store (remember) and update those values. Later if you want to find the mean score of those players or want to create a leaderboard, those values from the variables can be easily accessed and used for that purpose.
+
+## Declaring Variables
+
+Following is the syntax for variable declaration :
 
 ```c
 // Creating (more appropriately, 'declaring') a variable named 'my_variable'
@@ -38,7 +47,9 @@ new letters;
 letters = 25;
 ```
 
-But this can be done only if the part of the code where you’re referencing the variable is within the scope of that variable. Scope of a variable depends upon the code block or position where that variable was declared. For example a variable being declared outside any block of code, usually in the beginning of the script, has a ‘Global’ scope and can be accessed from anywhere within the script:
+## Scopes
+
+Modifying a variable's value is possible only if the part of the code where you’re referencing the variable is within the scope of that variable. Scope of a variable depends upon the code block or position where that variable was declared. For example a variable being declared outside any block of code, usually in the beginning of the script, has a ‘Global’ scope and can be accessed from anywhere within the script:
 
 ```c
 #include <a_samp>
@@ -109,14 +120,16 @@ public OnFilterScriptInit ()
 }
 ```
 
+## Naming Rules
+
 Now that you know how to declare variables, you need to know the naming rules for declaring variable which are listed below :
 
-All variable names must begin with a letter or an underscore ( _ )
-After the first initial letter, variable names can contain letters and numbers but no spaces or special characters.
-The variable names are case sensitive i.e Uppercase letters are distinct from the lowercase letters.
-Using a reserved word (keyword) as a variable name will show an error.
+* All variable names must begin with a letter or an underscore ( _ )
+* After the first initial letter, variable names can contain letters and numbers but no spaces or special characters.
+* The variable names are case sensitive i.e Uppercase letters are distinct from the lowercase letters.
+* Using a reserved word (keyword) as a variable name will show an error.
 
-Examples :
+### Examples :
 
 ```c
 new new; // Incorrect : Using a reserved word
@@ -132,6 +145,8 @@ new my_name; // Correct
 new !nternet; // Incorrect
 new Internet; // Correct
 ```
+
+## Storing different types of Data
 
 After that, now lets look at some examples of what types of data can be stored in variable and how :
 
@@ -156,7 +171,7 @@ new sentence = "This is a sentence";
 // error 006: must be assigned to an array
 ```
 
-A variable is capable of holding a character, integer value, boolean (true or false) and a float value (decimal value). The comments in the above code show that storing a string in a variable results into an error, the reason for which will be explained in the next chapter. Other than that, assigning a float value to a variable will result in a compiler warning, which can be avoided by adding ‘tags’. Without proper tags, the script will show warnings upon compilation but will be executable. Tags tell the compiler about the type of data that is intended to be stored in the variable, which in turn informs us in the form of errors or warning if we make a program-breaking mistake in the code. Example of tags :
+A variable is capable of holding a character, integer value, boolean (true or false) and a float value (decimal value). The comments in the above code show that storing a string in a variable results into an error (as strings can be stored in *Arrays* only). Other than that, assigning a float value to a variable will result in a compiler warning, which can be avoided by adding ‘tags’. Without proper tags, the script will show warnings upon compilation but will be executable. Tags tell the compiler about the type of data that is intended to be stored in the variable, which in turn informs us in the form of errors or warning if we make a program-breaking mistake in the code. Example of tags :
 
 ```c
 new decimal_value = 1.0; // Incorrect
